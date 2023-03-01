@@ -166,6 +166,7 @@ const config = {
         disableSwitch: true,
       },
     }),
+  scripts: [{ src: 'https://www.google.com/recaptcha/api.js', async: true, defer: true }],
 };
 
 module.exports = config;
