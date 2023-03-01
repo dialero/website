@@ -1,0 +1,125 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+:root {
+  --ifm-hero-background-color: unset;
+}
+
+.bgGraphics {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  z-index: -1;
+}
+.bgGraphics::before {
+  content: '';
+  position: absolute;
+  top: -12vh;
+  right: 0;
+  bottom: 0;
+  left: -42vw;
+  width: 208vw;
+  height: 108vh;
+  border-radius: 50%;
+  background: #bd1550;
+  box-shadow: 0 5px 20px #00000085;
+}
+.bgGraphics::after {
+  content: '';
+  position: absolute;
+  top: -12vh;
+  right: 0;
+  bottom: 0;
+  left: -40vw;
+  width: 220vw;
+  height: 106vh;
+  border-radius: 50%;
+  background: linear-gradient(190deg, #fafafa 50%, #ddd);
+  box-shadow: 0 5px 20px #00000085;
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroTitleContainer {
+  max-width: 31.25rem;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.heroTitle {
+  font-weight: var(--ifm-font-weight-light);
+  font-size: 3.125rem;
+}
+
+.heroTitle b {
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+@media screen and (max-width: 996px) {
+  .heroTitleContainer {
+    text-align: center;
+  }
+  .heroTitle {
+    font-size: 1.875rem;
+  }
+}
+
+.browserMockup {
+  border-top: 2em solid rgba(230, 230, 230, 1);
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, 0.3);
+  border-radius: 3px 3px 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: pulse-bg 10s infinite;
+  display: block;
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.browserMockup::before {
+  display: block;
+  position: relative;
+  width: 640px;
+  content: '';
+  top: -1.25em;
+  left: 1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #f44;
+  box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+}
+
+.slideshow div {
+  text-align: center !important;
+}
+.slideshow img {
+  width: 640px;
+}

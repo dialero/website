@@ -1,0 +1,69 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;800;900&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #bd1550;
+  --ifm-color-primary-dark: #aa1348;
+  --ifm-color-primary-darker: #a11244;
+  --ifm-color-primary-darkest: #840f38;
+  --ifm-color-primary-light: #d01758;
+  --ifm-color-primary-lighter: #d9185c;
+  --ifm-color-primary-lightest: #e72a6c;
+  --ifm-code-font-size: 95%;
+  --ifm-footer-title-color: var(--ifm-color-primary)
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: Catamaran, system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+    --ifm-heading-font-weight: 400;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #ffa3c4;
+  --ifm-color-primary-dark: #ff79a9;
+  --ifm-color-primary-darker: #ff649c;
+  --ifm-color-primary-darkest: #ff2674;
+  --ifm-color-primary-light: #ffcddf;
+  --ifm-color-primary-lighter: #ffe2ec;
+  --ifm-color-primary-lightest: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Effectively center the logo in the navbar */
+@media (max-width: 996px) {
+  .navbar__brand {
+    margin-left: auto;
+    margin-right: auto;
+    /* Because of absolutely placed search icon */
+    padding-right: 28px;
+  }
+  .hero {
+    padding-top: 0;
+  }
+}
+
+.navbar__title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  color: var(--ifm-color-primary)
+}
+.navbar__title:hover {
+  color: var(--ifm-color-primary-dark)
+}
+.navbar__logo {
+  padding: 0.25rem;
+}
+
+.ant-list-item-meta-avatar {
+  margin-top: auto;
+  margin-bottom: auto;
+}
