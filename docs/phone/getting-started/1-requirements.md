@@ -4,7 +4,7 @@ Review this document to understand the requirements before installing Dialero in
 
 ## Twilio Account
 
-Dialero requires an active Twilio Account. If your don't have one, please refer to the [Set Up Twilio Account](dialero_softphone_setup_twilio.html) section.
+Dialero requires an active Twilio Account. If your don't have one, please register to [Twilio](https://www.twilio.com/try-twilio) and create an account.
 
 ---
 

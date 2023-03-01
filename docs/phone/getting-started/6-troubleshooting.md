@@ -41,7 +41,7 @@
 
 ## Unauthorized endpoint error
 
-- [Activate Remote Site](dialero_softphone_setup_site.html#register)
+- [Activate Remote Site](configure-site#verify-remote-site-activation)
 
 ---
 

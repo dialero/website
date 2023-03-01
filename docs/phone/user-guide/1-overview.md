@@ -5,7 +5,7 @@
 ![](images/dialero-lightning-standby-tab.png)
 
 - Use **Tabs** to navigate between Standby, Call Log, Queues and Settings tabs.
-- Use **Quick Find/Dial** field to quickly find contacts or dialing to any phone number. [More info](dialero_user_guide_making_calls.html#quick-dial)
+- Use **Quick Find/Dial** field to quickly find contacts or dialing to any phone number. [More info](making-calls#quick-dial)
 - **Enable/Disable Incoming Calls** by toggling the button.
 - **Upcoming Calls** will reflect any uncompleted tasks with `Call` word included in the subject.
 
