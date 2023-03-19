@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Dialero',
   tagline: 'Native CTI solution for Salesforce',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://dialero.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
