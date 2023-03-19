@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Input, Spacer, Textarea } from '@nextui-org/react';
 import { useForm, Controller } from 'react-hook-form';
 import ReCaptcha from '@matt-block/react-recaptcha-v2';
@@ -59,112 +60,114 @@ export default function SupportForm(): JSX.Element {
   });
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
-          type="hidden"
-          name="captcha_settings"
-          value='{"keyname":"dialero_site","fallback":"true","orgId":"00D0Y000001iXjC","ts":""}'
-        />
-        <input type="hidden" name="orgid" value="00D0Y000001iXjC" />
-        <input
-          type="hidden"
-          name="retURL"
-          value="http://help.dialero.com/dialero_contact_support.html?sent=true"
-        />
-        <h3>Please fill in your contact information and describe your issue</h3>
-        <Controller
-          name="name"
-          control={control}
-          rules={{ required }}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              {...field}
-              placeholder="Name"
-              status={errors && errors.name ? 'error' : null}
-              width="100%"
-            />
-          )}
-        />
-        <Spacer y={0.5} />
-        <Controller
-          name="email"
-          control={control}
-          rules={{ required }}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              {...field}
-              type="email"
-              placeholder="Email"
-              status={errors && errors.email ? 'error' : null}
-              width="100%"
-            />
-          )}
-        />
-        <Spacer y={0.5} />
-        <Controller
-          name="subject"
-          control={control}
-          rules={{ required }}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              {...field}
-              placeholder="Subject"
-              status={errors && errors.subject ? 'error' : null}
-              width="100%"
-            />
-          )}
-        />
-        <Spacer y={0.5} />
-        <Controller
-          name="description"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            // <Input type="textarea" />
-            <Textarea
-              {...field}
-              maxLength={500}
-              rows={7}
-              placeholder="Describe your issue"
-              width="100%"
-            />
-          )}
-        />
-        <Spacer y={0.5} />
-        <ReCaptcha
-          siteKey={config.grsitekey}
-          theme="light"
-          size="normal"
-          onSuccess={(response) => {
-            // console.log(`Successful, result is ${response}`);
-            setCaptchaState({ response, error: false, errorMessage: '' });
-          }}
-          onError={() => {
-            // console.log('Something went wrong, check your conenction');
-            setCaptchaState({
-              response: '',
-              error: true,
-              errorMessage: 'Something went wrong, check your conenction.',
-            });
-          }}
-          onExpire={() => {
-            // console.log('Something went wrong, check your conenction');
-            setCaptchaState({
-              response: '',
-              error: true,
-              errorMessage: 'Verification has expired, re-verify.',
-            });
-          }}
-        />
-        <Spacer y={0.5} />
-        <button type="submit" className="button button--primary" disabled={captchaState.error}>
-          Submit
-        </button>
-      </form>
-    </>
+    <BrowserOnly fallback={<>Loading...</>}>
+      {() => (
+        <form onSubmit={onSubmit}>
+          <input
+            type="hidden"
+            name="captcha_settings"
+            value='{"keyname":"dialero_site","fallback":"true","orgId":"00D0Y000001iXjC","ts":""}'
+          />
+          <input type="hidden" name="orgid" value="00D0Y000001iXjC" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="http://help.dialero.com/dialero_contact_support.html?sent=true"
+          />
+          <h3>Please fill in your contact information and describe your issue</h3>
+          <Controller
+            name="name"
+            control={control}
+            rules={{ required }}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                {...field}
+                placeholder="Name"
+                status={errors && errors.name ? 'error' : null}
+                width="100%"
+              />
+            )}
+          />
+          <Spacer y={0.5} />
+          <Controller
+            name="email"
+            control={control}
+            rules={{ required }}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                {...field}
+                type="email"
+                placeholder="Email"
+                status={errors && errors.email ? 'error' : null}
+                width="100%"
+              />
+            )}
+          />
+          <Spacer y={0.5} />
+          <Controller
+            name="subject"
+            control={control}
+            rules={{ required }}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                {...field}
+                placeholder="Subject"
+                status={errors && errors.subject ? 'error' : null}
+                width="100%"
+              />
+            )}
+          />
+          <Spacer y={0.5} />
+          <Controller
+            name="description"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              // <Input type="textarea" />
+              <Textarea
+                {...field}
+                maxLength={500}
+                rows={7}
+                placeholder="Describe your issue"
+                width="100%"
+              />
+            )}
+          />
+          <Spacer y={0.5} />
+          <ReCaptcha
+            siteKey={config.grsitekey}
+            theme="light"
+            size="normal"
+            onSuccess={(response) => {
+              // console.log(`Successful, result is ${response}`);
+              setCaptchaState({ response, error: false, errorMessage: '' });
+            }}
+            onError={() => {
+              // console.log('Something went wrong, check your conenction');
+              setCaptchaState({
+                response: '',
+                error: true,
+                errorMessage: 'Something went wrong, check your conenction.',
+              });
+            }}
+            onExpire={() => {
+              // console.log('Something went wrong, check your conenction');
+              setCaptchaState({
+                response: '',
+                error: true,
+                errorMessage: 'Verification has expired, re-verify.',
+              });
+            }}
+          />
+          <Spacer y={0.5} />
+          <button type="submit" className="button button--primary" disabled={captchaState.error}>
+            Submit
+          </button>
+        </form>
+      )}
+    </BrowserOnly>
   );
 }
