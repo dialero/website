@@ -2386,6 +2386,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@matt-block/react-recaptcha-v2@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@matt-block/react-recaptcha-v2@npm:2.0.0"
+  dependencies:
+    nanoid: ^3.3.4
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 51e34bd3b047f375eb0c20ef4d9c4c2f2514cb11a94aa3611f45f1c0e345430c47b605ec459c9948e25514b11e68f9656ae371616a195e6b4ddce1f5e19bd9c9
+  languageName: node
+  linkType: hard
+
 "@mdx-js/mdx@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/mdx@npm:1.6.22"
@@ -11656,6 +11667,7 @@ __metadata:
     "@docusaurus/core": 2.1.0
     "@docusaurus/module-type-aliases": 2.1.0
     "@docusaurus/preset-classic": 2.1.0
+    "@matt-block/react-recaptcha-v2": ^2.0.0
     "@mdx-js/react": ^1.6.22
     "@nextui-org/react": ^1.0.0-beta.12
     "@tsconfig/docusaurus": ^1.0.5

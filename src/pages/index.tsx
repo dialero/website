@@ -25,7 +25,7 @@ import {
   BiGlobe,
   BiCloud,
 } from 'react-icons/bi';
-import LeadForm from '../components/LeadForm';
+import LeadForm from '../components/Forms/LeadForm';
 
 const AppExchangeListingUrl =
   'https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EcrVeUAJ';
@@ -196,7 +196,6 @@ const pricingProItems = [
 ];
 
 function PricingItem({ item }) {
-  console.log({ item });
   return (
     <>
       <Row>
@@ -276,8 +275,8 @@ export default function Home(): JSX.Element {
         <div id="features" className="container padding-top--xl margin-bottom--xl">
           <Container>
             <Grid.Container gap={2} justify="center">
-              {featureItems.map((item) => (
-                <Grid xs={6}>
+              {featureItems.map((item, i) => (
+                <Grid xs={6} key={i}>
                   <Row css={{ alignItems: 'center' }}>
                     <Col css={{ mw: 32 }}>{item.icon}</Col>
                     <Spacer x={1} />
@@ -317,8 +316,8 @@ export default function Home(): JSX.Element {
                 <Card.Divider />
                 <Card.Body>
                   <Container>
-                    {pricingLiteItems.map((item) => (
-                      <PricingItem item={item} />
+                    {pricingLiteItems.map((item, i) => (
+                      <PricingItem item={item} key={i} />
                     ))}
                   </Container>
                 </Card.Body>
@@ -359,8 +358,8 @@ export default function Home(): JSX.Element {
                 <Card.Divider />
                 <Card.Body>
                   <Container>
-                    {pricingProItems.map((item) => (
-                      <PricingItem item={item} />
+                    {pricingProItems.map((item, i) => (
+                      <PricingItem item={item} key={i} />
                     ))}
                   </Container>
                 </Card.Body>

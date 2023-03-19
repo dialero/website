@@ -9,7 +9,7 @@ const config = {
   title: 'Dialero',
   tagline: 'Native CTI solution for Salesforce',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/website/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -166,7 +166,7 @@ const config = {
         disableSwitch: true,
       },
     }),
-  scripts: [{ src: 'https://www.google.com/recaptcha/api.js', async: true }],
+  // scripts: [{ src: 'https://www.google.com/recaptcha/api.js', async: true, defer: true }],
 };
 
 module.exports = config;

@@ -1,5 +1,14 @@
-import ContactSupportForm from '@site/src/components/ContactSupportForm';
+import SupportForm from '@site/src/components/Forms/SupportForm';
+import { Col, Grid, Row } from '@nextui-org/react';
 
 # Contact Support
 
-<ContactSupportForm />
+<div id="contact" className="container padding-top--xl margin-bottom--xl">
+  <Grid>
+    <Row justify="start">
+      <Col css={{ mw: 370 }}>
+        <SupportForm />
+      </Col>
+    </Row>
+  </Grid>
+</div>
