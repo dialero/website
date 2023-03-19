@@ -9,7 +9,7 @@ const config = {
   title: 'Dialero',
   tagline: 'Native CTI solution for Salesforce',
   url: 'https://dialero.github.io',
-  baseUrl: '/',
+  baseUrl: '/website/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
